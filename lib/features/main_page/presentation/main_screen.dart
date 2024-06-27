@@ -62,7 +62,7 @@ class MainScreen extends StatelessWidget {
           ),
         ],
       ),
-      backgroundColor: const Color(0xFF3e2b27),
+      //backgroundColor: const Color(0xFF3e2b27),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -148,54 +148,6 @@ class MainScreen extends StatelessWidget {
                 )
               ],
             ),
-            Container(
-              width: size.width,
-              height: size.height / 2,
-              decoration: const BoxDecoration(
-                  // gradient: LinearGradient(
-                  //   begin: Alignment.topCenter,
-                  //   end: Alignment.bottomCenter,
-                  //   colors: [
-                  //     Color(0xFF87CEEB), // Light Sky Blue
-                  //     Color(0xFF00BFFF), // Deep Sky Blue
-                  //     Color(0xFF1E90FF), // Dodger Blue
-                  //     Color(0xFF000080), // Navy
-                  //   ],
-                  //   stops: [0.0, 0.3, 0.7, 1.0], // Adjusting the gradient stops
-                  // ),
-                  color: Colors.transparent,
-                  borderRadius: BorderRadius.all(Radius.circular(15))),
-              child: CarouselSlider(
-                options: CarouselOptions(
-                  height: 350.0,
-                  autoPlay: true,
-                  enlargeCenterPage: true,
-                  aspectRatio: 16 / 9,
-                  autoPlayInterval: const Duration(seconds: 3),
-                  autoPlayAnimationDuration: const Duration(milliseconds: 800),
-                  autoPlayCurve: Curves.fastOutSlowIn,
-                  pauseAutoPlayOnTouch: true,
-                  viewportFraction: 0.7,
-                ),
-                items: imgList
-                    .map((item) => Container(
-                          margin: const EdgeInsets.all(5),
-                          child: ClipRRect(
-                            borderRadius:
-                                const BorderRadius.all(Radius.circular(5)),
-                            child: CachedNetworkImage(
-                              imageUrl: item,
-                              fit: BoxFit.cover,
-                              placeholder: (context, url) => const Center(
-                                  child: CircularProgressIndicator()),
-                              errorWidget: (context, url, error) =>
-                                  const Center(child: Icon(Icons.error)),
-                            ),
-                          ),
-                        ))
-                    .toList(),
-              ),
-            )
           ],
         ),
       ),
